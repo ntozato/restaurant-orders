@@ -19,8 +19,7 @@ def most_requested(data, client):
         else:
             info[item[0]].append(item[1])
 
-    result = Counter(info[client])
-    return result.most_common(1)[0][0]
+    return Counter(info[client]).most_common(1)[0][0]
 
 
 def how_many_times_requested(data, client, food):
@@ -83,8 +82,9 @@ def analyze_log(path_to_file):
     save_in_mkt_file(result)
 
 
-# data = read_file('data/orders_1.csv')
-# print(most_requested(data, 'maria'))
+data = read_file('data/orders_1.csv')
+# print(data)
+print(most_requested(data, 'maria'))
 # print(how_many_times_requested(data, 'arnaldo', 'hamburguer'))
 # print(meals_never_requested(data, 'joao'))
 # print(days_off(data, 'joao'))
